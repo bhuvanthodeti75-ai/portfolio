@@ -1,0 +1,42 @@
+.lanyard-wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-photo-wrapper {
+  width: 138px;
+  height: 184px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  pointer-events: none;
+  /* Add a subtle dark background in case the image takes a moment to load */
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
+}
+
+.badge-photo-wrapper.is-hovered {
+  opacity: 1;
+}
+
+.badge-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  border-radius: 4px;
+}
+
+.badge-photo-wrapper.is-hovered .badge-photo-img {
+  transform: translateY(0);
+  opacity: 1;
+}

@@ -1,0 +1,225 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+  padding: 100px 0 80px;
+}
+
+/* 2-Column Grid Layout */
+.hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .hero__grid {
+    transform: translateY(-30px);
+  }
+}
+
+.hero__text-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+@media (min-width: 1025px) {
+  .hero__text-side {
+    transform: translateX(-15px);
+  }
+}
+
+/* Initialization tag */
+.hero__meta-init {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+  opacity: 0.8;
+  animation: heroTextFade 0.8s ease forwards 0.2s;
+}
+
+/* Heading STAY WEIRD */
+.hero__name {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 40px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  animation: heroTextFade 0.8s ease forwards 0.4s;
+}
+
+.hero__name-accent {
+  color: #3B82F6; /* Blue color matching user request */
+  display: inline-block;
+  margin-left: 0.8em; /* Reduced from 1.5em to prevent clipping of 'R' */
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+/* Designer Labels */
+.hero__label-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  animation: heroTextFade 0.8s ease forwards 0.6s;
+}
+
+.hero__label-sep {
+  color: #3B82F6;
+}
+
+/* Tagline */
+.hero__tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  animation: heroTextFade 0.8s ease forwards 0.8s;
+}
+
+/* Meta Footer */
+.hero__meta-footer {
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  animation: heroTextFade 0.8s ease forwards 1s;
+}
+
+/* Lanyard Render Column */
+.hero__lanyard-side {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: heroTextFade 0.8s ease forwards 0.6s;
+}
+
+.hero__lanyard-instruction {
+  position: absolute;
+  bottom: -10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.hero__lanyard-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px #3B82F6;
+}
+
+/* Scroll indicators */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.hero__scroll-indicator:hover {
+  color: var(--accent-light);
+}
+
+.hero__scroll-arrow {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes heroTextFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .hero__text-side {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__meta-footer {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero__lanyard-side {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero__meta-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

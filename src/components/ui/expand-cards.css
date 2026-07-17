@@ -1,0 +1,258 @@
+/* ================================================================
+   ExpandSkillCards  —  expand-cards.css
+   ================================================================ */
+
+/* ── Root wrapper ──────────────────────────────────────────────── */
+.ec__root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+/* ── Track: flex row of panels ─────────────────────────────────── */
+.ec__track {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  max-width: 1100px;
+  height: 400px; /* Mid-sized height between original 340px and 480px */
+}
+
+/* ── Individual panel ──────────────────────────────────────────── */
+.ec__panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  /* collapsed width */
+  width: 70px; /* Mid-sized width */
+  transition: width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+
+  background: rgba(18, 16, 28, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ec__panel--open {
+  /* expanded: take remaining space */
+  width: 360px; /* Mid-sized width */
+  border-color: var(--accent, #3b82f6);
+  box-shadow: 0 0 0 1px var(--accent, #3b82f6),
+              0 8px 40px rgba(0, 0, 0, 0.55),
+              0 0 60px color-mix(in srgb, var(--accent, #3b82f6) 18%, transparent);
+}
+
+/* ── Accent bar at the bottom ──────────────────────────────────── */
+.ec__accent-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent, #3b82f6);
+  border-radius: 0 0 18px 18px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.ec__panel--open .ec__accent-bar {
+  opacity: 1;
+}
+
+/* ================================================================
+   COLLAPSED STATE — rotated vertical heading
+   ================================================================ */
+.ec__heading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 0;
+
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* hide heading when expanded */
+.ec__panel--open .ec__heading {
+  opacity: 0;
+}
+
+.ec__emoji {
+  font-size: 1.6rem; /* Mid-sized font */
+  line-height: 1;
+}
+
+.ec__title {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem; /* Mid-sized font */
+  font-weight: 600;
+  color: #d0cce8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  /* rotate text to read bottom-to-top */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* ================================================================
+   EXPANDED STATE — skill list
+   ================================================================ */
+.ec__body {
+  position: absolute;
+  inset: 0;
+  padding: 30px 24px 26px; /* Mid-sized padding */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Mid-sized gap */
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease 0.15s,
+              transform 0.35s ease 0.15s;
+  pointer-events: none;
+}
+
+.ec__panel--open .ec__body {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* ── Body header ───────────────────────────────────────────────── */
+.ec__body-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 14px;
+}
+
+.ec__body-emoji {
+  font-size: 1.8rem; /* Mid-sized font */
+  line-height: 1;
+}
+
+.ec__body-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.15rem; /* Mid-sized font */
+  font-weight: 700;
+  color: #f2f0f8;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* ── Skill list ────────────────────────────────────────────────── */
+.ec__skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Mid-sized gap */
+}
+
+.ec__skill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px; /* Mid-sized padding */
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.ec__skill-item:hover {
+  background: color-mix(in srgb, var(--accent, #3b82f6) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent, #3b82f6) 35%, transparent);
+  transform: translateX(5px);
+}
+
+.ec__skill-icon {
+  font-size: 1.25rem; /* Mid-sized font */
+  color: var(--accent, #3b82f6);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ec__skill-name {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.88rem; /* Mid-sized font */
+  font-weight: 500;
+  color: #c8c4dc;
+  white-space: nowrap;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 900px) {
+  .ec__track {
+    height: 280px;
+  }
+
+  .ec__panel--open {
+    width: 260px;
+  }
+
+  .ec__panel {
+    width: 52px;
+  }
+
+  .ec__body {
+    padding: 20px 16px 18px;
+  }
+
+  .ec__body-title {
+    font-size: 0.9rem;
+  }
+
+  .ec__skill-name {
+    font-size: 0.77rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ec__track {
+    height: 240px;
+    gap: 5px;
+  }
+
+  .ec__panel {
+    width: 40px;
+    border-radius: 12px;
+  }
+
+  .ec__panel--open {
+    width: 220px;
+    border-radius: 12px;
+  }
+
+  .ec__emoji { font-size: 1rem; }
+  .ec__title { font-size: 0.6rem; }
+
+  .ec__body {
+    padding: 16px 12px 14px;
+    gap: 10px;
+  }
+
+  .ec__body-title { font-size: 0.82rem; }
+  .ec__skill-item { padding: 6px 8px; gap: 7px; }
+  .ec__skill-icon { font-size: 1rem; }
+  .ec__skill-name { font-size: 0.72rem; }
+}

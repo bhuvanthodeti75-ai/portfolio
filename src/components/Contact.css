@@ -1,0 +1,26 @@
+.contact__form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: -20px;
+  position: relative;
+}
+
+.contact .section-header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+/* Cover the "Powered by Visme Forms" badge */
+.contact__form-container::after {
+  content: '';
+  position: absolute;
+  bottom: 80px;
+  right: 50%;
+  transform: translateX(300px);
+  width: 200px;
+  height: 60px;
+  background: var(--bg-base);
+  z-index: 10;
+  pointer-events: none;
+}
