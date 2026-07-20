@@ -72,7 +72,7 @@ export default function Preloader({ onComplete }) {
           PORTFOLIO <span className="preloader__accent-year">2026</span>
         </div>
         <div className="preloader__header-right">
-          DESIGN LAB / ©26
+          Bhuvan / ©26
         </div>
       </div>
 
@@ -115,7 +115,7 @@ export default function Preloader({ onComplete }) {
 
         {/* Headline */}
         <h1 className="preloader__headline">
-          WELCOME TO THE <span className="preloader__headline-accent">LAB</span>
+          WELCOME TO THE <span className="preloader__headline-accent">CREATION</span>
         </h1>
 
         {/* Sub-tagline */}
