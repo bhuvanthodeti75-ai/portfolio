@@ -1,53 +1,153 @@
-.contact__form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.contact__wrapper {
+  max-width: 720px;
+  margin: 0 auto;
   width: 100%;
-  margin-top: -20px;
-  position: relative;
 }
 
-.contact .section-header h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+.contact__form {
+  padding: 40px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-/* Cover the "Powered by Visme Forms" badge */
-.contact__form-container::after {
-  content: '';
-  position: absolute;
-  bottom: 80px;
-  right: 50%;
-  transform: translateX(300px);
-  width: 200px;
-  height: 60px;
-  background: var(--bg-base);
-  z-index: 10;
-  pointer-events: none;
+.contact__form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact__field label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-light);
+}
+
+.contact__field input,
+.contact__field textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  border-color: #3B82F6;
+  background: rgba(59, 130, 246, 0.06);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+}
+
+.contact__status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact__status--success {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.contact__status--error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.contact__action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.contact__submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact__send-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.contact__submit-btn:hover .contact__send-icon {
+  transform: translateX(4px) translateY(-2px);
+}
+
+.contact__direct-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact__direct-email-btn:hover {
+  color: #3B82F6;
 }
 
 @media (max-width: 768px) {
-  .contact__form-container {
-    margin-top: 0;
+  .contact__form {
+    padding: 24px 20px;
   }
 
-  .contact__form-container > div {
-    max-width: 100% !important;
-    min-height: 480px !important;
+  .contact__form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  /* Adjust badge cover for mobile */
-  .contact__form-container::after {
-    transform: translateX(150px);
-    width: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact__form-container > div {
-    min-height: 520px !important;
+  .contact__action-row {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .contact__form-container::after {
-    display: none;
+  .contact__submit-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contact__direct-email-btn {
+    justify-content: center;
   }
 }
