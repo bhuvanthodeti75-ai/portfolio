@@ -7,7 +7,6 @@ import './Projects.css';
 
 /* ── Map each project into an InfiniteMenu item ─────────── */
 const projectItems = projects.map((p, i) => {
-  // Use distinct Unsplash tech images per project
   const unsplashImages = [
     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80',
     'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&q=80',
@@ -16,7 +15,7 @@ const projectItems = projects.map((p, i) => {
     'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80',
   ];
   return {
-    image: unsplashImages[i % unsplashImages.length],
+    image: (p.thumbnail && p.thumbnail !== '#' && !p.thumbnail.includes('thumb.jpg')) ? p.thumbnail : unsplashImages[i % unsplashImages.length],
     link: `/project/${p.slug}`,
     title: p.title,
     description: p.tagline,
@@ -42,13 +41,6 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
-  // Override link handler to use React Router for internal links
-  const itemsWithRouter = projectItems.map(item => ({
-    ...item,
-    // Keep link as-is; InfiniteMenu's action button will open it
-    // We patch window.open only for internal routes via the component's click
-  }));
-
   return (
     <section className="projects section" id="projects" ref={sectionRef}>
       <div className="container">
@@ -58,7 +50,7 @@ export default function Projects() {
           <div className="section-divider__line"></div>
         </div>
         <div className="section-header reveal" style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: '800px', height: '180px', margin: '0 auto' }}>
+          <div className="projects__ascii-header" style={{ position: 'relative', width: '100%', maxWidth: '800px', height: '180px', margin: '0 auto' }}>
             <ASCIIText
               text="PROJECTS"
               enableWaves={false}
@@ -68,11 +60,12 @@ export default function Projects() {
               textColor="#ffffff"
             />
           </div>
+          <h2 className="projects__mobile-heading">PROJECTS</h2>
           <p style={{ marginTop: '16px' }}>Things I've built — drag the globe to explore, click ↗ to view</p>
         </div>
 
         <div className="projects__globe-wrapper reveal" style={{ transitionDelay: '0.15s' }}>
-          <InfiniteMenu items={itemsWithRouter} scale={1.05} />
+          <InfiniteMenu items={projectItems} scale={1.05} />
         </div>
       </div>
     </section>

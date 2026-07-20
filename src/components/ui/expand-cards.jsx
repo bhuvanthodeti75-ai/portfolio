@@ -3,7 +3,7 @@ import "./expand-cards.css";
 /**
  * ExpandSkillCards
  * Receives the same `skillItems` array.
- * Each card collapses to show just the heading; on hover it widens
+ * Each card collapses to show just the heading; on hover/tap it widens
  * and reveals the list of skills with icons.
  */
 const ExpandSkillCards = ({ items = [], activeCategory, setActiveCategory, setActiveSkill }) => {
@@ -27,6 +27,7 @@ const ExpandSkillCards = ({ items = [], activeCategory, setActiveCategory, setAc
               className={`ec__panel${isOpen ? " ec__panel--open" : ""}`}
               style={{ "--accent": category.accentColor }}
               onMouseEnter={() => setActiveCategory(category.text)}
+              onClick={() => setActiveCategory(category.text)}
             >
               {/* ── Collapsed heading (always visible, rotated) ── */}
               <div className="ec__heading">
@@ -47,6 +48,10 @@ const ExpandSkillCards = ({ items = [], activeCategory, setActiveCategory, setAc
                       className="ec__skill-item"
                       onMouseEnter={() => setActiveSkill && setActiveSkill(skill)}
                       onMouseLeave={() => setActiveSkill && setActiveSkill(null)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (setActiveSkill) setActiveSkill(skill);
+                      }}
                     >
                       <span className="ec__skill-icon">{skill.icon}</span>
                       <span className="ec__skill-name">{skill.name}</span>

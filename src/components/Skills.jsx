@@ -141,7 +141,7 @@ export default function Skills() {
           <div className="section-divider__line"></div>
         </div>
         
-        <div className="skills__large-header reveal" style={{ position: 'relative', height: 'clamp(100px, 14vw, 180px)', marginTop: '60px', marginBottom: '70px' }}>
+        <div className="skills__large-header reveal" style={{ position: 'relative', height: 'clamp(60px, 14vw, 180px)', marginTop: '60px', marginBottom: '70px', overflow: 'hidden' }}>
           <TextPressure
             text="MY TOOLKIT"
             flex={true}
@@ -152,7 +152,7 @@ export default function Skills() {
             italic={true}
             textColor="#ffffff"
             strokeColor="#ff0000"
-            minFontSize={48}
+            minFontSize={24}
             scale={false}
           />
         </div>
@@ -160,7 +160,7 @@ export default function Skills() {
         <div className="skills__container">
           {/* ── Heading Side (Right) ─────────────────────────────── */}
           <div className="skills__text-side reveal">
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '260px' }}>
+            <div className="skills__showcase-panel">
               <AnimatePresence mode="wait">
                 {activeSkill ? (
                   <motion.div

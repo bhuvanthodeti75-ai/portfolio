@@ -87,7 +87,7 @@ export default function Contact() {
         </div>
         <div className="section-header reveal" style={{ marginTop: '20px', marginBottom: '10px' }}>
           <Magnet padding={50} disabled={false} magnetStrength={10}>
-            <h2>Get <span style={{ color: 'var(--accent)' }}>In</span> Touch</h2>
+            <h2>Get In Touch</h2>
           </Magnet>
           <p>Have an opportunity, project, or collaboration in mind? Let's talk.</p>
         </div>

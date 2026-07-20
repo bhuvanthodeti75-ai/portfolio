@@ -3,17 +3,44 @@
   height: 680px;
   position: relative;
   overflow: hidden;
+  touch-action: none;
+}
+
+/* ASCII canvas heading - visible on desktop */
+.projects__ascii-header {
+  display: block;
+}
+
+/* Plain text fallback - hidden on desktop */
+.projects__mobile-heading {
+  display: none;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .projects__globe-wrapper {
-    height: 480px;
+    height: 500px;
+  }
+
+  /* Hide 3D canvas on mobile, show plain heading */
+  .projects__ascii-header {
+    display: none;
+  }
+
+  .projects__mobile-heading {
+    display: block;
+    margin-bottom: 8px;
   }
 }
 
 @media (max-width: 480px) {
   .projects__globe-wrapper {
-    height: 380px;
+    height: 400px;
   }
 }
 

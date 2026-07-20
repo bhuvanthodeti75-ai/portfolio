@@ -18,6 +18,16 @@ export default function Navbar() {
   const navigate = useNavigate();
   const isHome = location.pathname === '/';
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
 
@@ -68,8 +78,17 @@ export default function Navbar() {
       <div className="navbar__inner container">
         <button className="navbar__logo" onClick={goHome}>
           <span className="navbar__logo-name">BHUVAN THODETI</span>
-          <span className="navbar__logo-sub">DESIGN LAB / ©26</span>
+          <span className="navbar__logo-sub">DESIGN LAB / © 26</span>
         </button>
+
+        {/* Overlay — tapping it closes the menu */}
+        {menuOpen && (
+          <div
+            className="navbar__overlay"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
 
         <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
           {navLinks.map((link) => (
@@ -91,6 +110,7 @@ export default function Navbar() {
           className="navbar__toggle"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>

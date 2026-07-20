@@ -246,35 +246,35 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .folder-container {
-    min-height: 520px;
+    min-height: 480px;
     margin: 1rem auto;
   }
   .folder__back {
     width: 240px;
-    height: 160px;
+    height: 155px;
   }
   .folder__back::after {
-    width: 80px;
-    height: 18px;
+    width: 75px;
+    height: 17px;
   }
   .paper-header {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     padding-bottom: 4px;
   }
   .paper-header h3 {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
   .paper-text {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     line-height: 1.35;
   }
   .folder.open .paper:nth-child(1) {
-    transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 120%)) rotateZ(-5deg);
+    transform: translate(calc(var(--magnet-x, 0px) - 55%), calc(var(--magnet-y, 0px) - 115%)) rotateZ(-5deg);
     width: 95%;
     height: 90%;
   }
   .folder.open .paper:nth-child(1):hover {
-    transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 120%)) rotateZ(-5deg) scale(1.03);
+    transform: translate(calc(var(--magnet-x, 0px) - 55%), calc(var(--magnet-y, 0px) - 115%)) rotateZ(-5deg) scale(1.03);
   }
   .folder.open .paper:nth-child(2) {
     transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 25%)) rotateZ(5deg);
@@ -285,11 +285,28 @@
     transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 25%)) rotateZ(5deg) scale(1.03);
   }
   .folder.open .paper:nth-child(3) {
-    transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 215%)) rotateZ(0deg);
+    transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 210%)) rotateZ(0deg);
     width: 95%;
     height: 90%;
   }
   .folder.open .paper:nth-child(3):hover {
-    transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 215%)) rotateZ(0deg) scale(1.03);
+    transform: translate(calc(var(--magnet-x, 0px) - 50%), calc(var(--magnet-y, 0px) - 210%)) rotateZ(0deg) scale(1.03);
+  }
+}
+
+@media (max-width: 400px) {
+  .folder-container {
+    min-height: 440px;
+    transform: scale(0.88);
+    transform-origin: top center;
+    margin-bottom: 0;
+  }
+  .folder__back {
+    width: 210px;
+    height: 140px;
+  }
+  .folder-instruction {
+    margin-top: 1rem;
+    font-size: 0.75rem;
   }
 }

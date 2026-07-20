@@ -69,16 +69,37 @@
   transition: var(--transition);
   border: none;
   cursor: pointer;
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar__link:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.03);
+}
+
+.navbar__link:hover::after {
+  width: 60%;
+  left: 20%;
 }
 
 .navbar__link--active {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.06);
+}
+
+.navbar__link--active::after {
+  width: 60%;
+  left: 20%;
 }
 
 /* ── Available Badge ───────────────────────────────────── */
@@ -131,31 +152,54 @@
   cursor: pointer;
 }
 
+/* Full-screen overlay — closes drawer when tapped */
+.navbar__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .navbar__toggle {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    touch-action: manipulation;
+  }
+
+  /* Show overlay on mobile */
+  .navbar__overlay {
+    display: block;
   }
 
   .navbar__links {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 75%;
     max-width: 300px;
     height: 100vh;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
     padding: 80px 24px 24px;
-    background: rgba(18, 16, 24, 0.98);
+    background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border-left: 1px solid var(--border);
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
+    overflow-y: auto;
   }
 
   .navbar__links--open {
@@ -166,12 +210,22 @@
     width: 100%;
     text-align: left;
     font-size: 1.05rem;
-    padding: 12px 16px;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    touch-action: manipulation;
   }
 
   .navbar__status-badge {
     margin-top: 16px;
     margin-left: 14px;
     align-self: flex-start;
+  }
+
+  .navbar__logo-name {
+    font-size: 0.95rem;
+  }
+
+  .navbar__logo-sub {
+    font-size: 0.65rem;
   }
 }

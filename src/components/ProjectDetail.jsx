@@ -64,13 +64,27 @@ export default function ProjectDetail() {
                 <p>{project.contribution}</p>
               </div>
 
-              {/* Screenshots placeholder */}
+              {/* Screenshots Gallery */}
               <div className="project-detail__screenshots">
-                <h3>Screenshots</h3>
+                <h3>Project Screenshots</h3>
                 <div className="project-detail__screenshot-grid">
-                  {project.screenshots.map((_, idx) => (
-                    <div className="project-detail__screenshot-placeholder" key={idx}>
-                      <span>Screenshot {idx + 1}</span>
+                  {project.screenshots.map((src, idx) => (
+                    <div className="project-detail__screenshot-card card" key={idx}>
+                      {src && src !== '#' ? (
+                        <a
+                          href={src}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-detail__screenshot-link"
+                          title="Click to open full high-res screenshot"
+                        >
+                          <img src={src} alt={`${project.title} screenshot ${idx + 1}`} loading="lazy" />
+                        </a>
+                      ) : (
+                        <div className="project-detail__screenshot-placeholder">
+                          <span>Screenshot {idx + 1}</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

@@ -1,113 +1,115 @@
 const projects = [
   {
+    slug: 'ecoverify',
+    title: 'EcoVerify AI',
+    tagline: 'Circular Waste Intelligence & Transparent Marketplace',
+    problem:
+      'Waste management & recycling marketplaces often lack transparency in material purity, pricing formulas, and end-to-end ESG recycling traceability — creating trust barriers between sellers and recyclers.',
+    contribution:
+      'Built a circular waste intelligence platform featuring instant AI-powered material detection & purity scoring from photos, automated transparent pricing based on purity & demand, dual-role workflows (Seller & Recycler portals), and end-to-end ESG traceability tracking batches to their recycled end.',
+    techStack: ['React', 'Next.js', 'AI Vision', 'Tailwind CSS', 'Vercel'],
+    tags: ['AI Product', 'Circular Economy', 'ESG Traceability', 'Live'],
+    thumbnail: '/images/ecoverify-1.png',
+    screenshots: [
+      '/images/ecoverify-1.png',
+      '/images/ecoverify-2.png',
+      '/images/ecoverify-3.png'
+    ],
+    liveUrl: 'https://ecoverify-ai.vercel.app/',
+    repoUrl: '#',
+    date: '2026',
+  },
+  {
     slug: 'rb-educations',
     title: 'RB Educations Website',
-    tagline: 'Professional educational institution website for a real client',
+    tagline: 'Expert Academic Support platform for M.Tech & PhD Scholars',
     problem:
-      'RB Educations needed a polished online presence that could present the institution clearly, work well on mobile, and give visitors a smooth way to understand services and contact the team.',
+      'RB Educations needed a sophisticated, high-trust digital portal to showcase academic research support services, publication workflows, thesis guidance, and research area consulting for scholars.',
     contribution:
-      'Completed the client project end to end: responsive UI, optimized UX, content structure, deployment, and final delivery. Focused on a clean design that feels trustworthy and easy to navigate.',
+      'Engineered a modern, responsive platform featuring dark mode glassmorphism UI cards, interactive service explorations (Research & Publication, Thesis & Dissertation, Academic Domains, Projects), transparent publication workflows, and direct consultation booking.',
     techStack: ['React', 'JavaScript', 'HTML', 'CSS', 'Vercel'],
     tags: ['Client Project', 'Live', 'Frontend'],
-    thumbnail: '/images/rb-educations-thumb.jpg',
-    screenshots: ['/images/rb-educations-1.jpg', '/images/rb-educations-2.jpg'],
-    liveUrl: '#',
-    repoUrl: '#',
-    date: '2026',
-  },
-  {
-    slug: 'calculatorverse',
-    title: 'CalculatorVerse',
-    tagline: 'Multi-calculator platform with 20+ calculators in one place',
-    problem:
-      'Users often need different calculators for math, finance, health, and everyday tasks, but jumping between separate tools creates friction and slows them down.',
-    contribution:
-      'Built a comprehensive calculator platform with 20+ calculators across categories. Prioritized fast load times, clean UI, simple navigation, and a practical user experience.',
-    techStack: ['React', 'JavaScript', 'HTML', 'CSS'],
-    tags: ['Web App', 'Utility', 'Live'],
-    thumbnail: '/images/calculatorverse-thumb.jpg',
-    screenshots: ['/images/calculatorverse-1.jpg', '/images/calculatorverse-2.jpg'],
-    liveUrl: '#',
-    repoUrl: '#',
-    date: '2026',
-  },
-  {
-    slug: 'reusehub',
-    title: 'ReuseHub',
-    tagline: 'Second-hand marketplace for students to buy and sell used items',
-    problem:
-      'Students need an easy way to exchange second-hand goods within their community, but listings, discovery, trust, and communication are often scattered across informal channels.',
-    contribution:
-      'Developed a peer-to-peer marketplace with product listings, search, user profiles, and secure messaging concepts to help students buy and sell used items more efficiently.',
-    techStack: ['React', 'Node.js', 'Express', 'Supabase', 'Firebase'],
-    tags: ['Marketplace', 'Full Stack', 'Student Product'],
-    thumbnail: '/images/reusehub-thumb.jpg',
-    screenshots: ['/images/reusehub-1.jpg', '/images/reusehub-2.jpg'],
-    liveUrl: '#',
+    thumbnail: '/images/rb-educations-1.png',
+    screenshots: [
+      '/images/rb-educations-1.png',
+      '/images/rb-educations-2.png',
+      '/images/rb-educations-3.png'
+    ],
+    liveUrl: 'https://www.rbeducations7.in/',
     repoUrl: '#',
     date: '2026',
   },
   {
     slug: 'career-insight-ai',
-    title: 'Career Insight AI',
-    tagline: 'AI-powered career guidance platform for students',
+    title: 'Career Insight AI (Career Mirror)',
+    tagline: 'AI-powered personalized career guidance & tailored growth path platform',
     problem:
-      'Students can struggle to understand career paths that match their interests and skills, especially when guidance feels generic or disconnected from their goals.',
+      'Students and early-career professionals struggle to discover clear, personalized career roadmaps aligned with their strengths, resulting in uncertain decision-making.',
     contribution:
-      'Built an AI-guidance platform that helps students explore career paths based on interests and skills, using OpenAI and Gemini APIs for personalized recommendations.',
-    techStack: ['React', 'Node.js', 'OpenAI API', 'Gemini AI', 'Supabase'],
-    tags: ['AI', 'Career Guidance', 'Full Stack'],
-    thumbnail: '/images/career-insight-ai-thumb.jpg',
-    screenshots: ['/images/career-insight-ai-1.jpg', '/images/career-insight-ai-2.jpg'],
-    liveUrl: '#',
+      'Built an AI-powered career guidance ecosystem featuring personalized recommendation engines, tailored growth plans with daily skill tasks, goal achievement tracking analytics (85%+ success metric), and secure user authentication.',
+    techStack: ['React', 'Node.js', 'AI API', 'Tailwind CSS', 'Lovable AI'],
+    tags: ['AI Product', 'Career Guidance', 'Live'],
+    thumbnail: '/images/career-insight-ai-1.png',
+    screenshots: [
+      '/images/career-insight-ai-1.png',
+      '/images/career-insight-ai-2.png'
+    ],
+    liveUrl: 'https://career-insight-ai-02.lovable.app',
     repoUrl: '#',
     date: '2026',
   },
   {
-    slug: 'future-forge-flow',
-    title: 'Future Forge Flow',
-    tagline: 'Workflow-based AI automation platform concept',
+    slug: 'calculatorverse',
+    title: 'CalculatorVerse (CalcNest)',
+    tagline: 'Instant, Verified Multi-Calculator Suite with 50+ Specialized Tools',
     problem:
-      'Complex task pipelines can become difficult to manage when people rely on manual steps, scattered tools, and repetitive work instead of connected automation.',
+      'Users often need distinct calculators for finance (EMI, SIP, Loans), academics (CGPA, SGPA), health (BMI, BMR), sports (Cricket run rates, NRR), and tech (Binary/Decimal conversion) but jumping between tools causes friction.',
     contribution:
-      'Designed and built a modern UI/UX concept for an automation-focused platform, centered around workflow pipelines, AI assistance, and streamlined task execution.',
-    techStack: ['React', 'JavaScript', 'AI Automation', 'UI/UX'],
-    tags: ['AI Automation', 'UI/UX', 'Concept'],
-    thumbnail: '/images/future-forge-flow-thumb.jpg',
-    screenshots: ['/images/future-forge-flow-1.jpg', '/images/future-forge-flow-2.jpg'],
-    liveUrl: '#',
+      'Engineered a unified multi-calculator platform featuring instant search across 50+ calibrated calculators, categorized tool suites (Finance, Student, Health, Cricket, Daily Use, Tech, Statistics), dark mode, and bookmarking functionality.',
+    techStack: ['React', 'JavaScript', 'HTML', 'CSS', 'Vercel'],
+    tags: ['Web App', 'Utility Suite', 'Live'],
+    thumbnail: '/images/calculatorverse-1.png',
+    screenshots: [
+      '/images/calculatorverse-1.png',
+      '/images/calculatorverse-2.png'
+    ],
+    liveUrl: 'https://www.calculatorverse.in/',
+    repoUrl: '#',
+    date: '2026',
+  },
+  {
+    slug: 'reusehub',
+    title: 'ReuseHub (ReUse Hub Redefined)',
+    tagline: 'Sustainable P2P Marketplace for Buying & Selling Used Items',
+    problem:
+      'Students and individuals need a reliable, sustainable marketplace to buy and sell second-hand goods, but scattered listings and trust issues hinder circular economy adoption.',
+    contribution:
+      'Developed a sustainable peer-to-peer marketplace with item listings, search filtering, user authentication, and green circular economy trading features.',
+    techStack: ['React', 'Tailwind CSS', 'Lovable AI', 'Supabase', 'Vercel'],
+    tags: ['Marketplace', 'Sustainable Economy', 'Live'],
+    thumbnail: '/images/reusehub-1.png',
+    screenshots: ['/images/reusehub-1.png'],
+    liveUrl: 'https://reuse-redefined.lovable.app',
     repoUrl: '#',
     date: '2026',
   },
   {
     slug: 'class-topic-tracker',
-    title: 'Class Topic Tracker',
-    tagline: 'Mobile-first academic companion for notes, assignments & attendance',
+    title: 'Class Topic Tracker (StudyVault)',
+    tagline: 'Mobile-first academic companion for notes, voice dictation, assignments & attendance',
     problem:
-      'College students often juggle notes, deadlines, and attendance across multiple subjects with no single organized place to manage it all efficiently.',
+      'College students juggle notes, deadlines, and attendance across multiple subjects with no single organized workspace to capture topics and track exam preparation.',
     contribution:
-      'Built a premium, mobile-first academic app with voice-to-text notes, subject-wise topic tracking, assignment management, attendance recording, and file attachments — powered by Supabase for real-time data.',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
-    tags: ['Student App', 'Full Stack', 'Mobile-First'],
-    thumbnail: '/images/class-topic-tracker-thumb.jpg',
-    screenshots: ['/images/class-topic-tracker-1.jpg', '/images/class-topic-tracker-2.jpg'],
-    liveUrl: '#',
-    repoUrl: '#',
-    date: '2026',
-  },
-  {
-    slug: 'portfolio-website',
-    title: 'Portfolio Website',
-    tagline: 'Personal developer portfolio built with React, Vite & WebGL',
-    problem:
-      'A developer needs a standout online presence that showcases skills, projects, and personality in a visually compelling and memorable way.',
-    contribution:
-      'Designed and built this portfolio from scratch — featuring WebGL 3D animations, interactive skill cards, smooth scroll reveals, and a polished dark UI that reflects my personal brand as a full-stack developer.',
-    techStack: ['React', 'Vite', 'JavaScript', 'CSS', 'WebGL'],
-    tags: ['Portfolio', 'Frontend', 'Personal'],
-    thumbnail: '/images/portfolio-thumb.jpg',
-    screenshots: ['/images/portfolio-1.jpg', '/images/portfolio-2.jpg'],
-    liveUrl: '#',
+      'Built a comprehensive academic hub featuring an Academic Stats Dashboard, topic note capture with voice dictation, subject-wise Study Materials revision center, assignment progress tracking, and calendar schedules.',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    tags: ['Student App', 'Academic Hub', 'Live'],
+    thumbnail: '/images/class-topic-tracker-1.png',
+    screenshots: [
+      '/images/class-topic-tracker-1.png',
+      '/images/class-topic-tracker-2.png',
+      '/images/class-topic-tracker-3.png'
+    ],
+    liveUrl: 'https://personal-app-edu.vercel.app/',
     repoUrl: '#',
     date: '2026',
   },

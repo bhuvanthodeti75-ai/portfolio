@@ -119,7 +119,7 @@ export default function Experience() {
                 <div
                   className="experience__card card"
                   key={idx}
-                  style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', margin: 0, padding: '32px' }}
+                  style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', margin: 0 }}
                 >
                   <div className="experience__icon">
                     {item.icon}

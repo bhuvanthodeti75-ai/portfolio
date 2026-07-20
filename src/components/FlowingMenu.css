@@ -138,3 +138,41 @@
   opacity: 0.5;
   margin: 0 18px;
 }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .menu__item-link {
+    font-size: clamp(0.85rem, 3vw, 1.2rem);
+    gap: 10px;
+    padding: 0 16px;
+    letter-spacing: 1px;
+  }
+
+  .menu__item-link:hover {
+    letter-spacing: 2px;
+  }
+
+  .menu__item-emoji {
+    font-size: 1.1em;
+  }
+
+  .marquee__skill-badge {
+    padding: 4px 12px 4px 10px;
+    margin: 0 4px;
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu__item-link {
+    font-size: clamp(0.78rem, 3.5vw, 1rem);
+    gap: 8px;
+    padding: 0 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .marquee__skill-badge {
+    padding: 3px 8px 3px 8px;
+    gap: 5px;
+  }
+}

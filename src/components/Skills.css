@@ -4,6 +4,7 @@
   /* 6 rows × 90px each */
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 /* ── Responsive ─────────────────────────────────────────── */
@@ -163,6 +164,13 @@
 }
 
 /* --- Active Skill Showcase & Layout --- */
+.skills__showcase-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 260px;
+}
+
 .skills__text-container {
   display: flex;
   flex-direction: column;
@@ -229,6 +237,10 @@
   .skills__showcase-desc {
     text-align: center;
   }
+
+  .skills__showcase-panel {
+    min-height: 200px;
+  }
 }
 
 /* --- Large Section Header --- */
@@ -237,7 +249,7 @@
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px;
-  overflow: visible;
+  overflow: hidden;
   display: flex;
   justify-content: center;
 }
@@ -253,4 +265,76 @@
   margin: 0;
   white-space: nowrap;
   opacity: 0.95;
+}
+
+/* Mobile responsive for skills section */
+@media (max-width: 768px) {
+  .skills__menu-wrapper {
+    height: 420px;
+  }
+
+  .skills.section {
+    padding-top: 30px !important;
+    padding-bottom: 40px;
+  }
+
+  .skills__large-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .skills__subtitle-below {
+    font-size: 0.78rem;
+    margin-top: 16px;
+    padding: 0 8px;
+  }
+
+  .skills__showcase-panel {
+    min-height: 160px;
+  }
+
+  .skills__showcase-name {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+
+  .skills__showcase-desc {
+    font-size: 0.92rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__menu-wrapper {
+    height: 360px;
+  }
+
+  .skills__large-header {
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+
+  .skills__showcase-panel {
+    min-height: 120px;
+  }
+
+  .skills__showcase-icon-wrapper {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  .skills__showcase-name {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .skills__showcase-desc {
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+
+  .skills__sub-skill-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    gap: 6px;
+  }
 }

@@ -15,8 +15,16 @@ const Magnet = ({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const magnetRef = useRef(null);
 
+  // Auto-detect touch devices and disable magnet effect
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   useEffect(() => {
-    if (disabled) {
+    setIsTouchDevice(window.matchMedia('(hover: none)').matches);
+  }, []);
+
+  const isDisabled = disabled || isTouchDevice;
+
+  useEffect(() => {
+    if (isDisabled) {
       setPosition({ x: 0, y: 0 });
       return;
     }
@@ -47,7 +55,7 @@ const Magnet = ({
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [padding, disabled, magnetStrength]);
+  }, [padding, isDisabled, magnetStrength]);
 
   const transitionStyle = isActive ? activeTransition : inactiveTransition;
 

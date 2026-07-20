@@ -1,6 +1,8 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
+import SocialIcons from './components/SocialIcons';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -41,6 +43,7 @@ function HomePage() {
 export default function App() {
   return (
     <>
+      <Preloader />
       <div className="site-background" aria-hidden="true">
         <Aurora
           colorStops={['#3b82f6', '#1e3a8a', '#0a0a0f']}
@@ -65,6 +68,7 @@ export default function App() {
         />
       </div>
       <Navbar />
+      <SocialIcons />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />

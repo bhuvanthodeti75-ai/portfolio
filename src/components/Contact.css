@@ -8,7 +8,7 @@
 }
 
 .contact .section-header h2 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 /* Cover the "Powered by Visme Forms" badge */
@@ -23,4 +23,31 @@
   background: var(--bg-base);
   z-index: 10;
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .contact__form-container {
+    margin-top: 0;
+  }
+
+  .contact__form-container > div {
+    max-width: 100% !important;
+    min-height: 480px !important;
+  }
+
+  /* Adjust badge cover for mobile */
+  .contact__form-container::after {
+    transform: translateX(150px);
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact__form-container > div {
+    min-height: 520px !important;
+  }
+
+  .contact__form-container::after {
+    display: none;
+  }
 }

@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
+import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import './Footer.css';
 
 export default function Footer() {
@@ -18,13 +18,22 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/bhuvan-thodeti"
+            href="https://www.linkedin.com/in/bhuvan-thodeti-4b8008338?utm_source=share_via&utm_content=profile&utm_medium=member_android"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__social-link"
             aria-label="LinkedIn"
           >
             <FaLinkedinIn />
+          </a>
+          <a
+            href="https://x.com/BhuvanThod88374"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__social-link"
+            aria-label="X (formerly Twitter)"
+          >
+            <FaXTwitter />
           </a>
         </div>
 

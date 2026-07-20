@@ -52,9 +52,9 @@
   animation: heroTextFade 0.8s ease forwards 0.2s;
 }
 
-/* Heading STAY WEIRD */
+/* Heading DESIGN LOUDER */
 .hero__name {
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-size: clamp(3.5rem, 10vw, 8rem);
   font-weight: 800;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -65,9 +65,9 @@
 }
 
 .hero__name-accent {
-  color: #3B82F6; /* Blue color matching user request */
+  color: #3B82F6;
   display: inline-block;
-  margin-left: 0.8em; /* Reduced from 1.5em to prevent clipping of 'R' */
+  margin-left: 0.8em;
   background: none;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
@@ -190,12 +190,16 @@
 @media (max-width: 1024px) {
   .hero__grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
   .hero__text-side {
     align-items: center;
     text-align: center;
+  }
+
+  .hero__name-accent {
+    margin-left: 0;
   }
 
   .hero__tagline {
@@ -209,17 +213,65 @@
   }
 
   .hero__lanyard-side {
-    height: 400px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0 60px;
+  }
+
+  .hero__grid {
+    gap: 24px;
+  }
+
+  .hero__lanyard-side {
+    height: 320px;
+  }
+
+  .hero__lanyard-instruction {
+    font-size: 0.65rem;
+  }
+
+  .hero__label-group {
+    font-size: 0.72rem;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero__tagline {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: 80px;
+    padding-top: 70px;
+  }
+
+  .hero__grid {
+    gap: 16px;
+  }
+
+  .hero__lanyard-side {
+    height: 280px;
   }
 
   .hero__meta-footer {
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    font-size: 0.68rem;
+  }
+
+  .hero__meta-init {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+  }
+
+  .hero__name {
+    margin-bottom: 24px;
   }
 }

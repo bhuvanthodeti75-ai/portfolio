@@ -90,21 +90,33 @@
 
 @media (max-width: 768px) {
   .experience__stack-wrapper {
-    height: 410px;
+    height: 380px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .experience__stack-wrapper {
-    height: 440px;
+    height: 420px;
+    margin-top: 24px;
   }
   .experience__card {
-    padding: 24px !important;
+    padding: 20px !important;
   }
   .experience__text {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     line-height: 1.6;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+  }
+  .experience__icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  .experience__name {
+    font-size: 0.88rem;
+  }
+  .experience__role {
+    font-size: 0.75rem;
   }
 }
 

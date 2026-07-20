@@ -130,3 +130,46 @@
   }
 }
 
+@media (max-width: 768px) {
+  .face-title {
+    top: 12px;
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+  }
+
+  .face-description {
+    top: 56px;
+    font-size: clamp(0.72rem, 2vw, 0.88rem);
+    line-height: 1.4;
+  }
+
+  .action-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .action-button-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .face-title {
+    top: 8px;
+    font-size: clamp(0.95rem, 4.5vw, 1.4rem);
+  }
+
+  .face-description {
+    top: 48px;
+    font-size: 0.72rem;
+  }
+
+  .action-button {
+    width: 44px;
+    height: 44px;
+    border-width: 3px;
+  }
+
+  .action-button.active {
+    bottom: 2.5em;
+  }
+}

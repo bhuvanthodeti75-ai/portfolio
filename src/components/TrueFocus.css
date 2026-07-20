@@ -73,3 +73,31 @@
   border-left: none;
   border-top: none;
 }
+
+@media (max-width: 768px) {
+  .focus-word {
+    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  }
+
+  .focus-container {
+    gap: 0.35em;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus-word {
+    font-size: clamp(1.1rem, 5vw, 1.8rem);
+  }
+
+  .corner {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-width: 2px;
+  }
+
+  .focus-container {
+    gap: 0.25em;
+    flex-wrap: wrap;
+    row-gap: 0.2em;
+  }
+}

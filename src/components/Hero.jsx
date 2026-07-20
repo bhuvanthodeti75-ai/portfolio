@@ -22,7 +22,7 @@ export default function Hero() {
               hoverIntensity={0.59}
               enableHover={true}
               color="#ffffff"
-              fontSize="clamp(4rem, 9vw, 7.5rem)"
+              fontSize="clamp(3.5rem, 10vw, 8rem)"
               fontWeight={800}
             >
               DESIGN
@@ -34,7 +34,7 @@ export default function Hero() {
                 hoverIntensity={0.59}
                 enableHover={true}
                 color="#3B82F6"
-                fontSize="clamp(4rem, 9vw, 7.5rem)"
+                fontSize="clamp(3.5rem, 10vw, 8rem)"
                 fontWeight={800}
               >
                 LOUDER
