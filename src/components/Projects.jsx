@@ -60,7 +60,6 @@ export default function Projects() {
               textColor="#ffffff"
             />
           </div>
-          <h2 className="projects__mobile-heading">PROJECTS</h2>
           <p style={{ marginTop: '16px' }}>Things I've built — drag the globe to explore, click ↗ to view</p>
         </div>
 
