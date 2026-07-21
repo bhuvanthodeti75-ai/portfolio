@@ -89,6 +89,9 @@
 }
 
 @media (max-width: 768px) {
+  .experience__rings-bg {
+    display: none !important;
+  }
   .experience__stack-wrapper {
     height: 380px;
     max-width: 100%;
