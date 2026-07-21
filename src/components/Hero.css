@@ -219,45 +219,73 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 60px;
+    padding: 60px 0 40px;
   }
 
   .hero__grid {
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Name / Title DESIGN LOUDER is at the top, card is down below on mobile responsiveness */
+  .hero__text-side {
+    order: 1;
+    align-items: center;
+    text-align: center;
   }
 
   .hero__lanyard-side {
-    height: 320px;
+    order: 2;
+    height: 360px;
+    margin: 24px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Disable physics drag on mobile touch to allow smooth page scroll */
   }
 
   .hero__lanyard-instruction {
-    font-size: 0.65rem;
+    display: none;
+  }
+
+  .hero__meta-init {
+    font-size: 0.72rem;
+    margin-bottom: 16px;
+  }
+
+  .hero__name {
+    font-size: clamp(3.5rem, 13vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: 24px;
   }
 
   .hero__label-group {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 20px;
   }
 
   .hero__tagline {
-    font-size: 0.95rem;
-    margin-bottom: 32px;
+    font-size: 0.98rem;
+    margin-bottom: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: 70px;
+    padding-top: 50px;
   }
 
   .hero__grid {
-    gap: 16px;
+    gap: 12px;
   }
 
   .hero__lanyard-side {
-    height: 280px;
+    height: 320px;
   }
 
   .hero__meta-footer {
@@ -266,12 +294,7 @@
     font-size: 0.68rem;
   }
 
-  .hero__meta-init {
-    font-size: 0.7rem;
-    margin-bottom: 20px;
-  }
-
   .hero__name {
-    margin-bottom: 24px;
+    margin-bottom: 18px;
   }
 }

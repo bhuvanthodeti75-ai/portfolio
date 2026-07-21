@@ -5,4 +5,23 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three-vendor';
+            }
+            if (id.includes('gsap') || id.includes('motion')) {
+              return 'animation-vendor';
+            }
+            if (id.includes('react')) {
+              return 'react-vendor';
+            }
+          }
+        },
+      },
+    },
+  },
 })

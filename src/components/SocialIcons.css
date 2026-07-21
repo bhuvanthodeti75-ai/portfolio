@@ -43,6 +43,15 @@
   color: var(--accent, #3b82f6);
 }
 
+.social-icon-re {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  color: inherit;
+}
+
 /* Hide on mobile and tablet screens to prevent text overlap */
 @media (max-width: 1024px) {
   .icons-section {

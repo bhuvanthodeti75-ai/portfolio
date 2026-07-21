@@ -7,33 +7,33 @@ import './Experience.css';
 
 const items = [
   {
-    text: 'Pursuing Computer Science & Engineering with a Data Science specialization at Malla Reddy Deemed to be University. Currently in 2nd year.',
+    text: 'B.Tech CSE (Data Science) 2nd Year student at Malla Reddy University.',
     title: 'B.Tech CSE (Data Science)',
     subtitle: 'MRDU (2025 - 2029)',
     icon: <FaGraduationCap />,
   },
   {
-    text: 'Won 2nd Prize at PRAESTO 2K26, organized by MRDU and GeeksforGeeks, for building with generative AI concepts and practical product thinking.',
+    text: 'Won 2nd Prize at PRAESTO 2K26 Generative AI Hackathon by MRDU & GeeksforGeeks.',
     title: 'Generative AI Hackathon',
-    subtitle: '2nd Prize - 2026',
+    subtitle: '2nd Prize Winner',
     icon: <FaTrophy />,
   },
   {
-    text: 'Completed a professional educational institution website with responsive UI, optimized UX, and full deployment for a real client.',
+    text: 'Engineered & deployed RB Educations academic portal for a live client.',
     title: 'RB Educations Website',
     subtitle: 'Client Project - 2026',
     icon: <FaLaptopCode />,
   },
   {
-    text: 'Participated in CODE-A-THON by Forge Alumnus, Forge Inspira at IIT Hyderabad, NOVUS 24-Hr Hackathon, and ARTIX 2026 Project Expo.',
+    text: 'Participated in IIT Hyderabad CODE-A-THON, NOVUS 24-Hr & ARTIX Expo.',
     title: 'Hackathons & Events',
-    subtitle: 'Certificates & Participation',
+    subtitle: 'IIT-H, Novus & Artix',
     icon: <FaAward />,
   },
   {
-    text: 'Built 5+ real-world web applications, including 3 deployed live projects, focusing on full-stack development, AI products, and automation.',
+    text: 'Built 5+ web & AI applications, including 3 live client products.',
     title: 'Full-Stack & AI Apps',
-    subtitle: 'Ongoing Development',
+    subtitle: 'Deployed Products',
     icon: <FaCode />,
   },
 ];
@@ -60,9 +60,9 @@ export default function Experience() {
   }, []);
 
   return (
-    <section className="experience section" id="experience" ref={sectionRef} style={{ position: 'relative' }}>
+    <section className="experience section" id="experience" ref={sectionRef} style={{ position: 'relative' }} aria-label="Experience &amp; Achievements - Bhuvan Thodeti">
       {/* Background Magic Rings covering the entire section */}
-      <div className="experience__rings-bg">
+      <div className="experience__rings-bg" aria-hidden="true">
         <MagicRings
           color="#3366F1"
           colorTwo="#42fcff"
@@ -91,10 +91,13 @@ export default function Experience() {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="section-divider reveal">
           <div className="section-divider__box">04</div>
-          <span className="section-divider__text">EXPERIENCE – THE PATH ACCOMPLISHED</span>
+          <span className="section-divider__text">EXPERIENCE – MILESTONES OF BHUVAN THODETI</span>
           <div className="section-divider__line"></div>
         </div>
         <div className="section-header reveal" style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <span style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>
+            <h2>Experience, Education &amp; Achievements — Bhuvan Thodeti</h2>
+          </span>
           <TrueFocus 
             sentence="Experience & Achievements"
             manualMode={false}
@@ -104,7 +107,7 @@ export default function Experience() {
             animationDuration={1.2}
             pauseBetweenAnimations={1.5}
           />
-          <p style={{ marginTop: '16px' }}>Education, client work, hackathons, and project milestones — drag or click cards to browse</p>
+          <p style={{ marginTop: '16px' }}>Education, client work, hackathons &amp; milestones — drag or click cards to browse</p>
         </div>
 
         <div className="experience__stack-wrapper reveal" style={{ transitionDelay: '0.15s' }}>

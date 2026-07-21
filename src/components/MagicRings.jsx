@@ -157,13 +157,13 @@ export default function MagicRings({
     const resize = () => {
       const w = mount.clientWidth;
       const h = mount.clientHeight;
-      const dpr = Math.min(window.devicePixelRatio, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       renderer.setSize(w, h);
       renderer.setPixelRatio(dpr);
       uniforms.uResolution.value.set(w * dpr, h * dpr);
     };
     resize();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
 
     const ro = new ResizeObserver(resize);
     ro.observe(mount);
@@ -181,14 +181,16 @@ export default function MagicRings({
     };
     const onClick = () => { burstRef.current = 1; };
 
-    window.addEventListener('mousemove', onMouseMove);
-    mount.addEventListener('mouseenter', onMouseEnter);
-    mount.addEventListener('mouseleave', onMouseLeave);
-    mount.addEventListener('click', onClick);
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    mount.addEventListener('mouseenter', onMouseEnter, { passive: true });
+    mount.addEventListener('mouseleave', onMouseLeave, { passive: true });
+    mount.addEventListener('click', onClick, { passive: true });
 
     let frameId;
     const animate = (t) => {
       frameId = requestAnimationFrame(animate);
+      if (document.visibilityState === 'hidden') return;
+
       const p = propsRef.current;
 
       smoothMouseRef.current[0] += (mouseRef.current[0] - smoothMouseRef.current[0]) * 0.08;

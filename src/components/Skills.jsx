@@ -133,15 +133,18 @@ export default function Skills() {
   ];
 
   return (
-    <section className="skills section" id="skills" ref={sectionRef}>
+    <section className="skills section" id="skills" ref={sectionRef} aria-label="Skills &amp; Technical Expertise - Bhuvan Thodeti">
       <div className="container">
         <div className="section-divider reveal">
           <div className="section-divider__box">02</div>
-          <span className="section-divider__text">SKILLS – THE TOOLS OF THE TRADE</span>
+          <span className="section-divider__text">SKILLS – TECHNICAL EXPERTISE OF BHUVAN THODETI</span>
           <div className="section-divider__line"></div>
         </div>
         
-        <div className="skills__large-header reveal" style={{ position: 'relative', height: 'clamp(60px, 14vw, 180px)', marginTop: '60px', marginBottom: '70px', overflow: 'hidden' }}>
+        <div className="skills__large-header reveal" style={{ position: 'relative', height: 'clamp(60px, 14vw, 180px)', marginTop: '60px', marginBottom: '70px', overflow: 'hidden' }} aria-label="My Toolkit &amp; Technical Skills">
+          <span style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>
+            <h2>Skills &amp; Technical Expertise — Bhuvan Thodeti | AI Developer &amp; Full Stack Developer</h2>
+          </span>
           <TextPressure
             text="MY TOOLKIT"
             flex={true}

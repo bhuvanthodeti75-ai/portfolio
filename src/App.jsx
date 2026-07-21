@@ -14,6 +14,8 @@ import Footer from './components/Footer';
 import DotField from './components/DotField';
 import Aurora from './components/Aurora';
 
+import SEO from './components/SEO';
+
 function HomePage() {
   const location = useLocation();
 
@@ -30,6 +32,11 @@ function HomePage() {
 
   return (
     <>
+      <SEO
+        title="Bhuvan Thodeti | AI Developer | Full Stack Developer"
+        description="Portfolio of Bhuvan Thodeti, AI Developer, Full Stack Developer & student. Explore top AI projects, web apps & engineering skills."
+        path="/"
+      />
       <Hero />
       <About />
       <Skills />

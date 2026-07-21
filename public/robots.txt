@@ -1,0 +1,7 @@
+# SEO Robots.txt for Bhuvan Thodeti Portfolio
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Host: https://bhuvanthodeti.vercel.app
+Sitemap: https://bhuvanthodeti.vercel.app/sitemap.xml

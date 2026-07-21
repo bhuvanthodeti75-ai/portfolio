@@ -48,12 +48,14 @@ export default function Lanyard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const cameraPosition = useMemo(() => (isMobile ? [0, 0, 12.5] : position), [isMobile, position]);
+
   return (
     <div className="lanyard-wrapper">
       <Canvas
-        camera={{ position: position, fov: fov }}
-        dpr={[1, isMobile ? 1.5 : 2]}
-        gl={{ alpha: transparent }}
+        camera={{ position: cameraPosition, fov: fov }}
+        dpr={[1, isMobile ? 1.25 : 1.5]}
+        gl={{ alpha: transparent, powerPreference: 'high-performance', stencil: false, antialias: true }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
       >
         <ambientLight intensity={Math.PI} />
@@ -170,8 +172,8 @@ function Band({
       ctx.restore();
     };
 
-    // Show photo only while the user is hovering; otherwise return plain base card.
-    if (!hovered) return baseMap;
+    // Show photo always on mobile (isMobile), or when hovered on desktop.
+    if (!hovered && !isMobile) return baseMap;
 
     if (frontImage && frontTex?.image) drawFitted(frontTex.image, FRONT_UV_RECT);
     if (backImage  && backTex?.image)  drawFitted(backTex.image,  BACK_UV_RECT);
@@ -182,7 +184,7 @@ function Band({
     tex.anisotropy = 16;
     tex.needsUpdate = true;
     return tex;
-  }, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map, hovered]);
+  }, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map, hovered, isMobile]);
 
   const [curve] = useState(
     () =>
@@ -237,7 +239,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[0, isMobile ? 0 : 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -248,11 +250,11 @@ function Band({
         <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
+        <RigidBody position={[isMobile ? 0 : 2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
           <CuboidCollider args={[0.8 * CARD_SIZE_RATIO, 1.125 * CARD_SIZE_RATIO, 0.01]} />
           <group
             scale={CARD_SCALE}
-            position={[0, -1.2, -0.05]}
+            position={[0, isMobile ? -0.8 : -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
             onPointerUp={e => (e.target.releasePointerCapture(e.pointerId), drag(false))}
@@ -276,18 +278,20 @@ function Band({
           </group>
         </RigidBody>
       </group>
-      <mesh ref={band}>
-        <meshLineGeometry />
-        <meshLineMaterial
-          color="white"
-          depthTest={false}
-          resolution={isMobile ? [1000, 2000] : [1000, 1000]}
-          useMap
-          map={texture}
-          repeat={[-4, 1]}
-          lineWidth={lanyardWidth}
-        />
-      </mesh>
+      {!isMobile && (
+        <mesh ref={band}>
+          <meshLineGeometry />
+          <meshLineMaterial
+            color="white"
+            depthTest={false}
+            resolution={[1000, 1000]}
+            useMap
+            map={texture}
+            repeat={[-4, 1]}
+            lineWidth={lanyardWidth}
+          />
+        </mesh>
+      )}
     </>
   );
 }

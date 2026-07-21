@@ -1,32 +1,29 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import StaggeredMenu from './StaggeredMenu';
 import './Navbar.css';
 
 const navLinks = [
-  { label: 'About', target: 'about' },
-  { label: 'Skills', target: 'skills' },
-  { label: 'Projects', target: 'projects' },
-  { label: 'Contact', target: 'contact' },
+  { label: 'About', target: 'about', link: '#about' },
+  { label: 'Skills', target: 'skills', link: '#skills' },
+  { label: 'Projects', target: 'projects', link: '#projects' },
+  { label: 'Experience', target: 'experience', link: '#experience' },
+  { label: 'Contact', target: 'contact', link: '#contact' },
+];
+
+const socialItems = [
+  { label: 'GitHub', link: 'https://github.com/bhuvanthodeti75-ai' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/bhuvan-thodeti-4b8008338' },
+  { label: 'Resume (Re)', link: '/Bhuvan_Thodeti_Resume.pdf' },
+  { label: 'Gmail', link: 'mailto:bhuvanthodeti75@gmail.com' },
 ];
 
 export default function Navbar() {
   const [active, setActive] = useState('');
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === '/';
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
 
   const handleScroll = useCallback(() => {
     setScrolled(window.scrollY > 50);
@@ -53,7 +50,6 @@ export default function Navbar() {
   }, [handleScroll]);
 
   const scrollToSection = (target) => {
-    setMenuOpen(false);
     if (!isHome) {
       navigate(`/#${target}`);
       return;
@@ -64,8 +60,15 @@ export default function Navbar() {
     }
   };
 
+  const handleStaggeredItemClick = (e, target) => {
+    e.preventDefault();
+    const cleanTarget = target.replace('#', '').replace('/', '');
+    if (cleanTarget) {
+      scrollToSection(cleanTarget);
+    }
+  };
+
   const goHome = () => {
-    setMenuOpen(false);
     if (!isHome) {
       navigate('/');
     } else {
@@ -81,16 +84,8 @@ export default function Navbar() {
           <span className="navbar__logo-sub">DESIGN LAB / © 26</span>
         </button>
 
-        {/* Overlay — tapping it closes the menu */}
-        {menuOpen && (
-          <div
-            className="navbar__overlay"
-            onClick={() => setMenuOpen(false)}
-            aria-hidden="true"
-          />
-        )}
-
-        <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
+        {/* Desktop Navigation Links */}
+        <div className="navbar__links navbar__desktop-links">
           {navLinks.map((link) => (
             <button
               key={link.target}
@@ -106,14 +101,23 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button
-          className="navbar__toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <HiX /> : <HiMenuAlt3 />}
-        </button>
+        {/* Mobile / Responsive StaggeredMenu from React Bits */}
+        <div className="navbar__mobile-staggered">
+          <StaggeredMenu
+            position="right"
+            items={navLinks}
+            socialItems={socialItems}
+            displaySocials={true}
+            displayItemNumbering={true}
+            menuButtonColor="#ffffff"
+            openMenuButtonColor="#3b82f6"
+            changeMenuColorOnOpen={true}
+            colors={['#1e1b4b', '#1e3a8a', '#3b82f6']}
+            accentColor="#3b82f6"
+            isFixed={false}
+            onItemClick={handleStaggeredItemClick}
+          />
+        </div>
       </div>
     </nav>
   );

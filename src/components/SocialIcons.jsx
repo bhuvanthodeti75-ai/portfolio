@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { FaGithub, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
+import { SiGmail } from 'react-icons/si';
 import './SocialIcons.css';
 
 function MagneticIcon({ href, children, ariaLabel }) {
@@ -70,7 +71,7 @@ function MagneticIcon({ href, children, ariaLabel }) {
         ref={iconRef}
         href={href}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="me noopener noreferrer"
         aria-label={ariaLabel}
         style={{
           '--siLeft': '25px',
@@ -96,11 +97,11 @@ export default function SocialIcons() {
         >
           <FaLinkedinIn />
         </MagneticIcon>
-        <MagneticIcon href="https://x.com/BhuvanThod88374" ariaLabel="X (formerly Twitter)">
-          <FaXTwitter />
+        <MagneticIcon href="/Bhuvan_Thodeti_Resume.pdf" ariaLabel="Bhuvan Thodeti Resume (PDF)">
+          <span className="social-icon-re">Re</span>
         </MagneticIcon>
-        <MagneticIcon href="https://instagram.com" ariaLabel="Instagram">
-          <FaInstagram />
+        <MagneticIcon href="mailto:bhuvanthodeti75@gmail.com" ariaLabel="Gmail">
+          <SiGmail />
         </MagneticIcon>
       </div>
     </div>

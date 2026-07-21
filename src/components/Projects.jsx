@@ -42,15 +42,18 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className="projects section" id="projects" ref={sectionRef}>
+    <section className="projects section" id="projects" ref={sectionRef} aria-label="Projects &amp; Work - Bhuvan Thodeti">
       <div className="container">
         <div className="section-divider reveal">
           <div className="section-divider__box">03</div>
-          <span className="section-divider__text">PROJECTS – THE WORKSHOP OF CREATION</span>
+          <span className="section-divider__text">PROJECTS – CREATIONS BY BHUVAN THODETI</span>
           <div className="section-divider__line"></div>
         </div>
         <div className="section-header reveal" style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div className="projects__ascii-header" style={{ position: 'relative', width: '100%', maxWidth: '800px', height: '180px', margin: '0 auto' }}>
+          <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>
+            Projects — Built by Bhuvan Thodeti | AI Developer &amp; Full Stack Engineer
+          </h2>
+          <div className="projects__ascii-header" style={{ position: 'relative', width: '100%', maxWidth: '800px', height: '180px', margin: '0 auto' }} aria-label="Projects Heading">
             <ASCIIText
               text="PROJECTS"
               enableWaves={false}
@@ -60,7 +63,7 @@ export default function Projects() {
               textColor="#ffffff"
             />
           </div>
-          <p style={{ marginTop: '16px' }}>Things I've built — drag the globe to explore, click ↗ to view</p>
+          <p style={{ marginTop: '16px' }}>Full Stack web applications, AI tools &amp; client products engineered by Bhuvan Thodeti — drag the globe to explore, click ↗ to view</p>
         </div>
 
         <div className="projects__globe-wrapper reveal" style={{ transitionDelay: '0.15s' }}>

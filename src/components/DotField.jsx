@@ -108,6 +108,11 @@ const DotField = memo(({
     let frameCount = 0;
 
     function tick() {
+      if (document.visibilityState === 'hidden') {
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+
       frameCount++;
       const dots = dotsRef.current;
       const m = mouseRef.current;
@@ -174,7 +179,7 @@ const DotField = memo(({
           d.x = d.ax + d.vx;
           d.y = d.ay + d.vy;
           d.sx += (d.x - d.sx) * 0.1;
-          d.sy += (d.y - d.sy) * 0.1;
+          d.sy += (d.ay - d.sy) * 0.1;
         }
 
         let drawX = d.sx;
@@ -205,7 +210,7 @@ const DotField = memo(({
     }
 
     doResize();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
     window.addEventListener('mousemove', onMouseMove, { passive: true });
     rafRef.current = requestAnimationFrame(tick);
 

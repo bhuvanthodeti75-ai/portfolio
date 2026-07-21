@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { HiArrowLeft, HiExternalLink, HiCode } from 'react-icons/hi';
 import projects from '../data/projectData';
+import SEO from './SEO';
 import './ProjectDetail.css';
 
 export default function ProjectDetail() {
@@ -16,6 +17,11 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="project-detail section">
+        <SEO
+          title="Project Not Found | Bhuvan Thodeti Portfolio"
+          description="The requested project was not found in Bhuvan Thodeti's portfolio."
+          path={`/project/${slug || 'not-found'}`}
+        />
         <div className="container">
           <div className="project-detail__not-found">
             <h2>Project not found</h2>
@@ -27,8 +33,59 @@ export default function ProjectDetail() {
     );
   }
 
+  // Schema.org structured data for Project Page
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": project.title,
+        "description": project.tagline,
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "url": project.liveUrl && project.liveUrl !== '#' ? project.liveUrl : `https://bhuvanthodeti.vercel.app/project/${project.slug}`,
+        "author": {
+          "@type": "Person",
+          "name": "Bhuvan Thodeti",
+          "url": "https://bhuvanthodeti.vercel.app/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://bhuvanthodeti.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://bhuvanthodeti.vercel.app/#projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": project.title,
+            "item": `https://bhuvanthodeti.vercel.app/project/${project.slug}`
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="project-detail">
+      <SEO
+        title={`${project.title} | Bhuvan Thodeti`}
+        description={`${project.title} — ${project.tagline}. Built by Bhuvan Thodeti, AI Developer & Full Stack Engineer.`}
+        keywords={`${project.title}, Bhuvan Thodeti, Bhuvan, ${project.techStack.join(', ')}, AI Developer, Full Stack Developer, Portfolio`}
+        image={project.thumbnail ? `https://bhuvanthodeti.vercel.app${project.thumbnail}` : undefined}
+        path={`/project/${project.slug}`}
+        jsonLd={projectJsonLd}
+      />
       {/* Hero Banner */}
       <div className="project-detail__hero">
         <div className="project-detail__hero-bg">
@@ -78,7 +135,12 @@ export default function ProjectDetail() {
                           className="project-detail__screenshot-link"
                           title="Click to open full high-res screenshot"
                         >
-                          <img src={src} alt={`${project.title} screenshot ${idx + 1}`} loading="lazy" />
+                          <img
+                            src={src}
+                            alt={`${project.title} Screenshot ${idx + 1} - Bhuvan Thodeti AI Developer & Full Stack Engineer`}
+                            loading="lazy"
+                            decoding="async"
+                          />
                         </a>
                       ) : (
                         <div className="project-detail__screenshot-placeholder">

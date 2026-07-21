@@ -67,16 +67,16 @@ export default function About() {
   ];
 
   return (
-    <section className="about section" id="about" ref={sectionRef}>
+    <section className="about section" id="about" ref={sectionRef} aria-label="About Bhuvan Thodeti - AI Developer &amp; Full Stack Developer">
       <div className="container">
         <div className="section-divider reveal">
           <div className="section-divider__box">01</div>
-          <span className="section-divider__text">ABOUT – THE PERSON BEHIND THE LAB</span>
+          <span className="section-divider__text">ABOUT – BHUVAN THODETI</span>
           <div className="section-divider__line"></div>
         </div>
         <div className="about__layout">
           <div className="about__header reveal" ref={headerRef} style={{ position: 'relative' }}>
-            <h2>
+            <h2 aria-label="About Bhuvan Thodeti">
               <VariableProximity
                 label="ABOUT"
                 containerRef={headerRef}
@@ -97,10 +97,10 @@ export default function About() {
               />
             </h2>
             <h3 className="about__subtitle">
-              I'm Bhuvan — a designer <span className="about__subtitle-ampersand">&</span> developer, student at <span className="about__subtitle-uni">Malla Reddy University</span>.
+              I'm <strong>Bhuvan Thodeti</strong> — an AI Developer, Full Stack Developer, Generative AI Enthusiast &amp; student at <span className="about__subtitle-uni">Malla Reddy University</span>.
             </h3>
             <p className="about__intro">
-              I'm a Full Stack Developer passionate about building modern, responsive, and user-focused web applications. I combine clean design with efficient development to create digital experiences that are both visually appealing and highly functional.
+              I'm Bhuvan Thodeti, a Software Engineer, Full Stack Developer, and React Developer passionate about building modern, responsive, and user-focused web applications and AI products. I combine clean UI design with efficient engineering to deliver scalable digital experiences.
             </p>
             <div className="about__table">
               <div className="about__table-row">
@@ -116,11 +116,11 @@ export default function About() {
               </div>
               <div className="about__table-row">
                 <div className="about__table-label">FOCUS</div>
-                <div className="about__table-value">Full-Stack Development, AI Applications & Automation</div>
+                <div className="about__table-value">AI Development, Full-Stack Web Development &amp; Automation</div>
               </div>
               <div className="about__table-row">
                 <div className="about__table-label">STATUS</div>
-                <div className="about__table-value">Open to Internships & Freelance Opportunities</div>
+                <div className="about__table-value">Open to Internships &amp; Freelance Opportunities</div>
               </div>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function About() {
           <div className="about__content reveal">
             <div className="folder-container">
               <Folder color="#3B82F6" size={1.3} items={paperItems} />
-              <div className="folder-instruction">Click the folder to explore my journey</div>
+              <div className="folder-instruction">Click the folder to explore Bhuvan Thodeti's journey</div>
             </div>
           </div>
         </div>
