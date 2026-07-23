@@ -33,7 +33,7 @@ export default function ProjectDetail() {
     );
   }
 
-  // Schema.org structured data for Project Page
+  // Schema.org structured data graph for Project Page
   const projectJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -46,8 +46,43 @@ export default function ProjectDetail() {
         "url": project.liveUrl && project.liveUrl !== '#' ? project.liveUrl : `https://www.bhuvanthodeti.in/project/${project.slug}`,
         "author": {
           "@type": "Person",
+          "@id": "https://www.bhuvanthodeti.in/#person",
           "name": "Bhuvan Thodeti",
           "url": "https://www.bhuvanthodeti.in/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "@id": "https://www.bhuvanthodeti.in/#person"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": `https://www.bhuvanthodeti.in/project/${project.slug}#webpage`,
+        "url": `https://www.bhuvanthodeti.in/project/${project.slug}`,
+        "name": `${project.title} | Bhuvan Thodeti`,
+        "description": `${project.title} — ${project.tagline}. Built by Bhuvan Thodeti, AI Developer & Full Stack Engineer.`,
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.bhuvanthodeti.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Projects",
+              "item": "https://www.bhuvanthodeti.in/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": project.title,
+              "item": `https://www.bhuvanthodeti.in/project/${project.slug}`
+            }
+          ]
         }
       },
       {

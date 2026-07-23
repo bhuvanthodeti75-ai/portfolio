@@ -33,8 +33,9 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="Bhuvan Thodeti | AI Developer | Full Stack Developer"
-        description="Portfolio of Bhuvan Thodeti, AI Developer, Full Stack Developer & student. Explore top AI projects, web apps & engineering skills."
+        title="Bhuvan Thodeti | AI Developer, Full Stack Developer & Generative AI Engineer"
+        description="Bhuvan Thodeti is an AI Developer, Full Stack Developer, Generative AI Engineer, and Web Developer building intelligent applications, AI solutions, automation systems, and modern web experiences."
+        keywords="Bhuvan Thodeti, Bhuvan, AI Developer, Generative AI Engineer, Full Stack Developer, Software Engineer, Web Developer, React Developer, Next.js Developer, Node.js Developer, Portfolio, Machine Learning, Artificial Intelligence, Hyderabad, India, Student Developer, Open Source, Cloud Computing"
         path="/"
       />
       <Hero />
@@ -50,6 +51,9 @@ function HomePage() {
 export default function App() {
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Preloader />
       <div className="site-background" aria-hidden="true">
         <Aurora
@@ -76,7 +80,7 @@ export default function App() {
       </div>
       <Navbar />
       <SocialIcons />
-      <main>
+      <main id="main-content" tabIndex="-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />

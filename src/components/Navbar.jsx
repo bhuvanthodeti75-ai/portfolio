@@ -77,20 +77,23 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`} aria-label="Main Navigation">
       <div className="navbar__inner container">
-        <button className="navbar__logo" onClick={goHome}>
+        <button className="navbar__logo" onClick={goHome} aria-label="Bhuvan Thodeti Home">
           <span className="navbar__logo-name">BHUVAN THODETI</span>
           <span className="navbar__logo-sub">DESIGN LAB / © 26</span>
         </button>
 
         {/* Desktop Navigation Links */}
-        <div className="navbar__links navbar__desktop-links">
+        <div className="navbar__links navbar__desktop-links" role="menubar">
           {navLinks.map((link) => (
             <button
               key={link.target}
               className={`navbar__link ${active === link.target ? 'navbar__link--active' : ''}`}
               onClick={() => scrollToSection(link.target)}
+              aria-label={`Navigate to ${link.label} section`}
+              aria-current={active === link.target ? 'page' : undefined}
+              role="menuitem"
             >
               {link.label.toUpperCase()}
             </button>
