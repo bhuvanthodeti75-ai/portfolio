@@ -2,48 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/</loc>
+    <loc>https://www.bhuvanthodeti.in/</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://bhuvanthodeti.vercel.app/bt.jpeg</image:loc>
+      <image:loc>https://www.bhuvanthodeti.in/bt.jpeg</image:loc>
       <image:title>Bhuvan Thodeti - AI Developer &amp; Full Stack Developer</image:title>
       <image:caption>Portfolio of Bhuvan Thodeti - AI Developer &amp; Full Stack Engineer</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/project/ecoverify</loc>
+    <loc>https://www.bhuvanthodeti.in/project/ecoverify</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/project/rb-educations</loc>
+    <loc>https://www.bhuvanthodeti.in/project/rb-educations</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/project/career-insight-ai</loc>
+    <loc>https://www.bhuvanthodeti.in/project/career-insight-ai</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/project/calculatorverse</loc>
+    <loc>https://www.bhuvanthodeti.in/project/calculatorverse</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/project/reusehub</loc>
+    <loc>https://www.bhuvanthodeti.in/project/reusehub</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhuvanthodeti.vercel.app/project/class-topic-tracker</loc>
+    <loc>https://www.bhuvanthodeti.in/project/class-topic-tracker</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

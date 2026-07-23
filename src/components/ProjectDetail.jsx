@@ -43,11 +43,11 @@ export default function ProjectDetail() {
         "description": project.tagline,
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
-        "url": project.liveUrl && project.liveUrl !== '#' ? project.liveUrl : `https://bhuvanthodeti.vercel.app/project/${project.slug}`,
+        "url": project.liveUrl && project.liveUrl !== '#' ? project.liveUrl : `https://www.bhuvanthodeti.in/project/${project.slug}`,
         "author": {
           "@type": "Person",
           "name": "Bhuvan Thodeti",
-          "url": "https://bhuvanthodeti.vercel.app/"
+          "url": "https://www.bhuvanthodeti.in/"
         }
       },
       {
@@ -57,19 +57,19 @@ export default function ProjectDetail() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://bhuvanthodeti.vercel.app/"
+            "item": "https://www.bhuvanthodeti.in/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Projects",
-            "item": "https://bhuvanthodeti.vercel.app/#projects"
+            "item": "https://www.bhuvanthodeti.in/#projects"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": project.title,
-            "item": `https://bhuvanthodeti.vercel.app/project/${project.slug}`
+            "item": `https://www.bhuvanthodeti.in/project/${project.slug}`
           }
         ]
       }
@@ -82,7 +82,7 @@ export default function ProjectDetail() {
         title={`${project.title} | Bhuvan Thodeti`}
         description={`${project.title} — ${project.tagline}. Built by Bhuvan Thodeti, AI Developer & Full Stack Engineer.`}
         keywords={`${project.title}, Bhuvan Thodeti, Bhuvan, ${project.techStack.join(', ')}, AI Developer, Full Stack Developer, Portfolio`}
-        image={project.thumbnail ? `https://bhuvanthodeti.vercel.app${project.thumbnail}` : undefined}
+        image={project.thumbnail ? `https://www.bhuvanthodeti.in${project.thumbnail}` : undefined}
         path={`/project/${project.slug}`}
         jsonLd={projectJsonLd}
       />

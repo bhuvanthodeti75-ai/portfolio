@@ -8,13 +8,13 @@ export default function SEO({
   title = "Bhuvan Thodeti | AI Developer | Full Stack Developer",
   description = "Portfolio of Bhuvan Thodeti, AI Developer, Full Stack Developer & student. Explore top AI projects, web apps & engineering skills.",
   keywords = "Bhuvan Thodeti, Bhuvan, Bhuvan Portfolio, Bhuvan Thodeti Portfolio, AI Developer, Full Stack Developer, Web Developer, Software Engineer, Student Developer, React Developer, Next.js Developer, Portfolio",
-  image = "https://bhuvanthodeti.vercel.app/bt.jpeg",
+  image = "https://www.bhuvanthodeti.in/bt.jpeg",
   path = "",
   jsonLd = null,
 }) {
   const location = useLocation();
   const currentPath = path || location.pathname;
-  const canonicalUrl = `https://bhuvanthodeti.vercel.app${currentPath}`;
+  const canonicalUrl = `https://www.bhuvanthodeti.in${currentPath}`;
 
   useEffect(() => {
     // 1. Update Title (under 60 characters)

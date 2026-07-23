@@ -3,5 +3,5 @@ User-agent: *
 Allow: /
 
 # Host & Sitemap
-Host: https://bhuvanthodeti.vercel.app
-Sitemap: https://bhuvanthodeti.vercel.app/sitemap.xml
+Host: https://www.bhuvanthodeti.in
+Sitemap: https://www.bhuvanthodeti.in/sitemap.xml
